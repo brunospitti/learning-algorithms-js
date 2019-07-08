@@ -9,6 +9,13 @@ console.log(`
 // code
 const reverseArray = arr => {
 
+  for (let i = 0; i < arr.length / 2; i++) {
+    let arrI = arr[i];
+    arr[i] = arr[arr.length - i - 1];
+    arr[arr.length - i - 1] = arrI;
+  }
+
+  return arr
 }
 
 // test

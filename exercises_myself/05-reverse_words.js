@@ -7,8 +7,16 @@ console.log(`
 `);
 
 // code
-const reverseWords = textToReverse => {
+const reverseWords = str => {
+  let wordsArr = str.split(' ');
 
+  for (let i = 0; i < wordsArr.length / 2; i++) {
+    let arrI = wordsArr[i];
+    wordsArr[i] = wordsArr[wordsArr.length - i - 1];
+    wordsArr[wordsArr.length - i - 1] = arrI;
+  }
+
+  return wordsArr.join(' ')
 }
 
 // test

@@ -15,3 +15,4 @@ const caeserCipher = (string, num) => {
 console.log(caeserCipher("Zoo Keeper", 2));
 console.log(caeserCipher("Big Car.", -16));
 console.log(caeserCipher("Javascript!", -900));
+console.log(caeserCipher("Javascript!", 27));

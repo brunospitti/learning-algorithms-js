@@ -7,8 +7,12 @@ console.log(`
 `);
 
 // code
-const isPalindrome = string => {
-
+const cleanString = str => {
+  return str.toLowerCase().split(' ').join('').replace(/[^a-z]/gi, "");
+}
+const isPalindrome = str => {
+  let cleanStr = cleanString(str);
+  return cleanStr === cleanStr.split('').reverse().join('');
 }
 
 // test
