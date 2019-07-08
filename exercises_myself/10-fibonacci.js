@@ -8,7 +8,11 @@ console.log(`
 
 // code
 const fibonacci = pos => {
+  if (pos <= 2){
+    return 1;
+  }
 
+  return fibonacci(pos - 1) + fibonacci(pos - 2);
 }
 
 // test

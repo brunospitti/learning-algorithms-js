@@ -7,7 +7,7 @@ console.log(`
 `);
 
 // -- helpers
-const mergeSort = arr => {
+const mergeSortHelper = arr => {
   if (arr.length === 1) {
     return arr;
   }
@@ -16,10 +16,10 @@ const mergeSort = arr => {
   const left = arr.slice(0, middle);
   const right = arr.slice(middle);
 
-  return merge(mergeSort(left), mergeSort(right));
+  return mergeHelper(mergeSortHelper(left), mergeSortHelper(right));
 }
 
-const merge = (a1, a2) => {
+const mergeHelper = (a1, a2) => {
   let resultArr = [];
   while (a1.length && a2.length) {
     if (a1[0] < a2[0]) {
@@ -40,7 +40,7 @@ const getMean = arr => {
 
 const getMedian = arr => {
   const middle = Math.floor(arr.length / 2);
-  const sortedArr = mergeSort(arr);
+  const sortedArr = mergeSortHelper(arr);
   if (arr.length % 2 === 0) {
     return (sortedArr[middle] + sortedArr[middle - 1]) / 2
   } else {

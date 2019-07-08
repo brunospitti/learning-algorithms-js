@@ -8,6 +8,18 @@ console.log(`
 
 // code
 const twoSumOn = (arr, sum) => {
+  let finalArr = [];
+  let hasTable = [];
+
+  arr.forEach(num => {
+    let counterPart = sum - num;
+    if(hasTable.indexOf(counterPart) >= 0){
+      finalArr.push([num, counterPart]);
+    }
+    hasTable.push(num);
+  })
+
+  return finalArr;
 
 }
 
@@ -17,10 +29,7 @@ let arrTwo08 = [1, 6, 4, 5, 3, 3];
 let arrThree08 = [40, 11, 19, 17, -12];
 
 console.log("twoSumOn | arrOne08 -> ", twoSumOn(arrOne08, 11));
-console.log("twoSumOn2 | arrOne08 -> ", twoSumOn2(arrOne08, 11));
 
 console.log("twoSumOn | arrTwo08 -> ", twoSumOn(arrTwo08, 7));
-console.log("twoSumOn2 | arrTwo08 -> ", twoSumOn2(arrTwo08, 7));
 
 console.log("twoSumOn | arrThree08 -> ", twoSumOn(arrThree08, 28));
-console.log("twoSumOn2 | arrThree08 -> ", twoSumOn2(arrThree08, 28));
